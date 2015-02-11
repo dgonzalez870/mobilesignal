@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">MobileSignal</string>
+	<string name="act_datos_tel">Datos del Teléfono</string>
+	<string name="act_datos_red">Datos de la Red</string>
+	<string name="act_test_datos">Test de velocidad de datos</string>
+	<string name="act_test_llam">Test de llamadas</string>
+	<string name="act_info_geo">Información geográfica</string>
+</resources>
