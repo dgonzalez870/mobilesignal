@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.telephony.*;
-import android.widget.ArrayAdapter;
+import android.telephony.TelephonyManager;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class DispositivoInfoActivity extends Activity{
@@ -22,8 +22,11 @@ public class DispositivoInfoActivity extends Activity{
 			items.add(new Item("Operador de la SIM", manager.getSimOperator()));
 			items.add(new Item("ID del dispositivo",manager.getDeviceId()));
 			items.add(new Item("Operador de la Red",manager.getNetworkOperator()));
+			setContentView(R.layout.layout_main);
+			ListView lista=(ListView)findViewById(R.id.lista_actividades);
+			lista.setAdapter(new ItemsalarmaAdapter(getApplicationContext(), items));
 		}else{
-			Toast.makeText(getApplicationContext(), "Se ha presentado un error en la Tarjeta SIM", Toast.LENGTH_LONG);
+			Toast.makeText(getApplicationContext(), "Se ha presentado un error en la Tarjeta SIM", Toast.LENGTH_LONG).show();
 		}
 	}
 
@@ -38,6 +41,4 @@ public class DispositivoInfoActivity extends Activity{
 		// TODO Auto-generated method stub
 		super.onStop();
 	}
-	
-
 }
