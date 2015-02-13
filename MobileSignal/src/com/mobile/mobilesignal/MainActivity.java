@@ -1,5 +1,5 @@
 package com.mobile.mobilesignal;
- 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,27 +16,32 @@ public class MainActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.layout_main);
-		String[] actividades={ getString(R.string.act_datos_tel), 
-				              getString(R.string.act_datos_red),
-				              getString(R.string.act_test_datos),
-				              getString(R.string.act_test_llam),
-				              getString(R.string.act_info_geo)};
+		String[] actividades = { getString(R.string.act_datos_tel),
+				getString(R.string.act_datos_red),
+				getString(R.string.act_test_datos),
+				getString(R.string.act_test_llam),
+				getString(R.string.act_info_geo) };
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-		        android.R.layout.simple_list_item_1,actividades );
-		ListView lista_actividades=(ListView)findViewById(R.id.lista_actividades);
+				android.R.layout.simple_list_item_1, actividades);
+		ListView lista_actividades = (ListView) findViewById(R.id.lista_actividades);
 		lista_actividades.setAdapter(adapter);
 		lista_actividades.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
-					long id) {
+			public void onItemClick(AdapterView<?> arg0, View arg1,
+					int position, long id) {
 				switch (position) {
 				case 0:
-					startActivity(new Intent(getApplicationContext(), DispositivoInfoActivity.class));
+					startActivity(new Intent(getApplicationContext(),
+							DispositivoInfoActivity.class));
 					break;
 				case 1:
+					startActivity(new Intent(getApplicationContext(),
+							RedInfoActivity.class));
 					break;
 				case 2:
+					startActivity(new Intent(getApplicationContext(),
+							MapaActivity.class));
 					break;
 				case 4:
 					break;
@@ -45,4 +50,5 @@ public class MainActivity extends Activity {
 				}
 			}
 		});
-	}}
+	}
+}
